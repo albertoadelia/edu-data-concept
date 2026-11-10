@@ -1,0 +1,32 @@
+{
+  "formato": 1,
+  "publicado": "2026-11-10T20:41:53.071Z",
+  "autor": "Alberto Adélia Manhice — DPE Tete",
+  "app": {
+    "versao": "1.29.0",
+    "obrigatoria": false,
+    "notas": "Instalador sem dados embutidos; dados de base transferidos do repositório; activação de contas novas com internet uma vez.",
+    "instalador": {
+      "nome": "EducStat_Tete_Instalador_1.29.0.exe",
+      "url": "https://github.com/albertoadelia/edu-data-concept/releases/download/v1.29.0/EducStat_Tete_Instalador_1.29.0.exe",
+      "sha256": "83881038d62de5397d91088c2a32dce0f3622af86d1c27485dafd9cd207168e5",
+      "tam": 116263579
+    },
+    "portatil": {
+      "nome": "EducStat_Tete_Portatil_1.29.0.exe",
+      "url": "https://github.com/albertoadelia/edu-data-concept/releases/download/v1.29.0/EducStat_Tete_Portatil_1.29.0.exe",
+      "sha256": "82fcd86d43221bd44a6bd0011dcb1afe567f33a8b194b8e76a4ff85d1611ea7c",
+      "tam": 116030227
+    }
+  },
+  "dados": {
+    "versao": "2026.11.10",
+    "obrigatoria": false,
+    "minApp": "1.29.0",
+    "notas": "Bases EducStat/AdultStat 2004–2025, cadastro, resumos e população.",
+    "url": "https://raw.githubusercontent.com/albertoadelia/edu-data-concept/main/educstat/dados/educstat-dados-2026.11.10.educdados",
+    "sha256": "de9384a443f02a7ec4becf2c85693368ab57f69af5bcdc4bc153d9a6b226c071",
+    "tam": 12157460,
+    "ficheiros": 338
+  }
+}
