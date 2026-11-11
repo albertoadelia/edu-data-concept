@@ -1,0 +1,24 @@
+# EduData Concept 1.31.2 — mantém activo o servidor gratuito do Supabase.
+# O plano gratuito suspende o projecto ao fim de 7 dias sem pedidos. Esta tarefa faz um pedido de leitura
+# de 3 em 3 dias, com a chave PUBLICÁVEL (a mesma que vai dentro do programa; nunca a chave secreta).
+# Não lê nem grava dados: a tabela educstat_publicados só mostra a lista de anos publicados a contas autenticadas,
+# por isso o pedido devolve uma lista vazia — basta para o servidor contar actividade.
+name: Manter o servidor activo
+on:
+  schedule:
+    - cron: '17 7 */3 * *'
+  workflow_dispatch: {}
+permissions: {}
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Pedido de leitura ao Supabase
+        env:
+          URL: https://dvwttxtugxvvwtmablhc.supabase.co
+          CHAVE: sb_publishable_J1RkZ-iN1llte8P3z1WlHA_Q4z-yJ6R
+        run: |
+          code=$(curl -s -o /dev/null -w '%{http_code}' "$URL/rest/v1/educstat_publicados?select=ano&limit=1" -H "apikey: $CHAVE")
+          echo "Resposta do servidor: $code"
+          test "$code" -lt 500
